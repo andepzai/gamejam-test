@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {FeaturedView} from "./FeaturedJam/FeaturedJam";
+import './App.css'
+import {JamList} from "./Jam/JamList";
+import {GameList} from "./Game/GameList";
+import {Nav} from "./components/Nav/Nav";
+import {Search, SearchView} from "./components/Search/Search";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Nav/>
+            <SearchView icon={require('./components/Search/arrow.png').default}>
+                <Search placeholder={"Search"}/>
+            </SearchView>
+            <FeaturedView/>
+            <JamList/>
+            <GameList/>
+        </div>
+    );
 }
 
 export default App;
